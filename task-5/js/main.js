@@ -14,8 +14,16 @@ function isInt(a) {
     }
 }
 
-function isEven(a) {
-    if (a % 2 == 0) {
+function isPositive(a) {
+    if (a > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function isSquare(a) {
+    if (Math.sqrt(a) % 1 == 0) {
         return true;
     } else {
         return false;
@@ -26,19 +34,19 @@ let num;
 let count = 0;
 
 for (let i = 1; i <= 10; i++) {
-    while (isNumber(num) == false || isInt(num) == false) {
+    while (isNumber(num) == false || isInt(num) == false || isPositive(num) == false) {
         num = +prompt("Введите число " + i);
         if (isNumber(num) == false) {
             alert("Это не число");
         } else if (isInt(num) == false) {
             alert("Это не целое число");
-        } else {
-            if (isEven(num)) {
-                count += 1;
-            }
+        } else if (isPositive(num) == false) {
+            alert("Это не положительное число");
+        } else if (isSquare(num)) {
+            count += 1;
         }
+        } 
+        num = "";
     }
-    num = "";
-}
 
-alert("В этом наборе чисел " + count + " чётных");
+alert("В этом наборе чисел " + count + " квадратов");
