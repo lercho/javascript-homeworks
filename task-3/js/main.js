@@ -30,3 +30,4 @@ function showText(arr, text) {
 }
 
 showText(stylesArr, someText);
+
