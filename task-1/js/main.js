@@ -1,12 +1,14 @@
-function raiseToPower(num, pow) {
+// Написать функцию возведения числа в степень.
+
+function toPower(num, pow) {
     if (pow <= 1) {
-        return num;
+        return num; 
     } else {
-        return num * raiseToPower(num, pow - 1);
+        return num * toPower(num, pow - 1);
     }
 }
 
-let number = +prompt("Введите число");
-let power = +prompt("Введите степень");
+number = +prompt("Введите число");
+power = +prompt("Введите степень");
 
-console.log(raiseToPower(number, power));
+console.log(toPower(number, power));
